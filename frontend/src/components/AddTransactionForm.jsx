@@ -23,7 +23,7 @@ function AddTransactionForm({ onAddTransaction }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-4 pt-4 pb-4">
+    <form onSubmit={handleSubmit} className="mb-4 pt-4 pb-4 font-semibold">
        <div className="flex items-center mb-2">
         <label htmlFor="description" className="mr-2">Description:</label>
         <input
@@ -44,7 +44,7 @@ function AddTransactionForm({ onAddTransaction }) {
           className="border p-2 rounded"
         />
       </div>
-      <div className="flex items-center pt-2">
+      <div className="flex items-center pt-4">
         <label htmlFor="date" className="mr-2">Date:</label>
         <input
           type="date"
@@ -53,7 +53,9 @@ function AddTransactionForm({ onAddTransaction }) {
           onChange={(e) => setDate(e.target.value)}
           className="border p-2 rounded"
           required
-        />        
+        />
+      </div>
+      <div className="flex items-center pt-4">        
         <span className="mr-2">Type:</span>
         <label htmlFor="expense" className="mr-2">
           <input
@@ -76,7 +78,6 @@ function AddTransactionForm({ onAddTransaction }) {
           Income
         </label>
       </div>
-
       <div className="pt-4">
         <button type="submit" className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-3xl">Add Transaction</button>
       </div> 
