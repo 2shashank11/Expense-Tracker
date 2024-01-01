@@ -13,6 +13,7 @@ const expenseSchema = new Schema({
     },
     desc: {
         type: String,
+        required: false,
     },
     total: {
         type: Number,

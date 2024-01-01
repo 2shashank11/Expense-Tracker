@@ -10,6 +10,10 @@ const incomeSchema = new Schema({
     total: {
         type: Number,
         required: true
+    },
+    desc: {
+        type: String,
+        required: false,
     }
 }, { timestamps: true })
 
