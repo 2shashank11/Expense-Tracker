@@ -32,7 +32,7 @@ router.post('/income/', createIncome)
 router.get('/income/', getIncome)
 
 //DELETE an income
-router.get('/income/:id', deleteIncome)
+router.delete('/income/:id', deleteIncome)
 
 
 module.exports = router
