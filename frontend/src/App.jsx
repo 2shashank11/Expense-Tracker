@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="mx-auto p-10 text-xl">
-      <h1 className="text-5xl font-bold p-6">Expense & Income Tracker</h1>
+      <h1 className="text-5xl font-bold p-6">Expense Tracker</h1>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <AddTransactionForm onAddTransaction={addTransaction} />
         <div className="mt-4">
