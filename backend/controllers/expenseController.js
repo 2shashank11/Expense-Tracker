@@ -77,8 +77,8 @@ const createIncome = async (req, res) => {
     const { date, total } = req.body;
 
     // Validate input data, including date format
-    const dateFormat = "yyyy-MM-dd";
-    if (!date || !total || !isValidDateFormat(date, dateFormat)) {
+    const dateFormat = Date(date);
+    if (!date || !total ) {
       return res.status(400).json({ error: "Missing or invalid fields" });
     }
 
