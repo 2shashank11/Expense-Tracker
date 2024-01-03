@@ -1,26 +1,31 @@
-require('dotenv').config()
-const express = require('express')
-const mongoose = require('mongoose')
-const expenseRoute = require('./routes/expenses')
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const expenseRoute = require("./routes/expenses");
+const cors = require("cors");
+const app = express();
 
-const app = express()
+// Use CORS middleware at the beginning
+app.use(cors());
 
-app.use(express.json())
+app.use(express.json());
 
 app.use((req, res, next) => {
-    console.log(req.path, req.method)
-    next()
-})
+  console.log(req.path, req.method);
+  next();
+});
 
-//routes
-app.use('/api', expenseRoute)
+// Routes
+app.use("/api", expenseRoute);
 
-//connect to db
-mongoose.connect(process.env.MONG_URI)
-    .then(() => {
-        app.listen(process.env.PORT, () => {
-            console.log('Connected to Database')
-        })
-    }).catch((error) => {
-        console.log(error)
-    })
+// Connect to the database
+mongoose
+  .connect(process.env.MONG_URI)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log("Connected to Database");
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
