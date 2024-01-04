@@ -74,7 +74,7 @@ const deleteExpense = async (req, res) => {
 //Create new Income
 const createIncome = async (req, res) => {
   try {
-    const { date, total } = req.body;
+    const { date, total, desc } = req.body;
 
     // Validate input data, including date format
     const dateFormat = Date(date);
